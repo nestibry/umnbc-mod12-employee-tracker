@@ -1,5 +1,4 @@
 // Install Dependencies
-const fs = require('fs');
 const Logo = require('./lib/Logo.js');
 
 
@@ -8,7 +7,8 @@ const newLogo = new Logo();
 newLogo.setLogoInfo()
     .then(() => {
 
-        console.log(`Generated: ${fileName}`);
+        console.log(`Generated:`);
+        console.log(newLogo);
 
     });
 
