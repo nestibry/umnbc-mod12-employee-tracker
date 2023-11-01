@@ -8,16 +8,16 @@ const questions = [
     choices: [
         'View All Departments', 
         'View All Employees',
-        'View All Roles', 
-        'Add a Department',
-        'Add an Employee',
-        'Add a Role',
-        'Update an Employee Role',
-        'Update Employee Managers',   // Bonus
-        'View Employees by Manager',  // Bonus
-        'View Employees by Department', //Bonus
-        'Delete Departments, Roles, and Employees', // Bonus
-        'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
+        // 'View All Roles', 
+        // 'Add a Department',
+        // 'Add an Employee',
+        // 'Add a Role',
+        // 'Update an Employee Role',
+        // 'Update Employee Managers',   // Bonus
+        // 'View Employees by Manager',  // Bonus
+        // 'View Employees by Department', //Bonus
+        // 'Delete Departments, Roles, and Employees', // Bonus
+        // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
         'Exit Employee Manager'],
   },
 ];
