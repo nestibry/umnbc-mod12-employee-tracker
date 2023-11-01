@@ -18,7 +18,10 @@ const questions = [
             // 'View Employees by Department', //Bonus
             // 'Delete Departments, Roles, and Employees', // Bonus
             // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
-            'Exit Employee Manager'],
+            new inquirer.Separator(),
+            'Exit Employee Manager',
+            new inquirer.Separator(),
+        ],
     },
 ];
 
