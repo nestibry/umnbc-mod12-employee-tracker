@@ -61,6 +61,7 @@ nodemon server.js
 
 ## Credits
 - © 2023 edX Boot Camps LLC.
+- [ASCII Art Generator - patorjk.com](https://patorjk.com/software/taag/#p=display&f=ANSI%20Regular&t=Employee%0AManager)
 
 ## License
 
