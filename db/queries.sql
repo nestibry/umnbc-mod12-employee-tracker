@@ -1,6 +1,7 @@
+USE employee_db;
 
-SELECT * FROM employee_db.department;
+SELECT * FROM department;
 
-SELECT * FROM employee_db.role;
+SELECT * FROM role;
 
-SELECT * FROM employee_db.employee;
+SELECT * FROM employee;
