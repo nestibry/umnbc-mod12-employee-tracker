@@ -29,3 +29,13 @@ SELECT r.id, r.title, d.name as department, r.salary
 FROM departments d
 INNER JOIN roles r ON d.id = r.department_id;
 
+
+-- Update an employee role
+UPDATE employees SET role_id = 1 WHERE id = 2;
+
+SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, concat(m.first_name, ' ' ,m.last_name) AS manager FROM employees e
+INNER JOIN roles r ON e.role_id = r.id
+INNER JOIN departments d ON r.department_id = d.id
+LEFT JOIN employees m ON e.manager_id = m.id
+WHERE e.id = 2;
+
