@@ -48,14 +48,29 @@ console.log("Starting Queries...");
 // });
 
 
+// // 'Add a Department'
+// db.query(`INSERT INTO departments(name) VALUES ("Service"); `, (err, results) => {
+//     if(err) console.log("Error adding a department");
+//     console.log(results);
+// });
+// db.query(`SELECT * FROM departments`, (err, results) => {
+//     if(err) console.log("Error reading departments");
+//     console.table(results);
+// });
+
+
+// 'Add a Role',
+// db.query(`INSERT INTO departments(name) VALUES ("Service"); `, (err, results) => {
+//     if(err) console.log("Error adding a department");
+//     console.log(results);
+// });
+
 
 /*
     Queries remaining to execute:
         
-        'View All Employees',
-        'Add a Department',
+
         'Add an Employee',
-        'Add a Role',
         'Update an Employee Role',
         // 'Update Employee Managers',   // Bonus
         // 'View Employees by Manager',  // Bonus
