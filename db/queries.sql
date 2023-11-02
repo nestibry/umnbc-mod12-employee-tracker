@@ -20,3 +20,12 @@ LEFT JOIN employees m ON e.manager_id = m.id;
 
 -- Add new department 
 INSERT INTO departments(name) VALUES ("Service"); 
+
+
+-- Add new role 
+INSERT INTO roles (title, salary, department_id) VALUES ("Dog Walker", 50000, 5);
+
+SELECT r.id, r.title, d.name as department, r.salary 
+FROM departments d
+INNER JOIN roles r ON d.id = r.department_id;
+

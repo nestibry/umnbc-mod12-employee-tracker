@@ -30,8 +30,8 @@ console.log("Starting Queries...");
 //     SELECT r.id, r.title, d.name as department, r.salary
 //     FROM departments d
 //     INNER JOIN roles r ON d.id = r.department_id`,
-//     function (err, results) {
-//         console.log("View All Roles");
+//     (err, results) => {
+//         if(err) console.log("Error reading departments");
 //         console.table(results);
 // });
 
@@ -59,10 +59,18 @@ console.log("Starting Queries...");
 // });
 
 
-// 'Add a Role',
-// db.query(`INSERT INTO departments(name) VALUES ("Service"); `, (err, results) => {
-//     if(err) console.log("Error adding a department");
+// // 'Add a Role',
+// db.query(`INSERT INTO roles (title, salary, department_id) VALUES ("Snow Shoveler", 75000, 5)`, (err, results) => {
+//     if(err) console.log("Error adding a role");
 //     console.log(results);
+// });
+// db.query(`
+//     SELECT r.id, r.title, d.name as department, r.salary
+//     FROM departments d
+//     INNER JOIN roles r ON d.id = r.department_id`,
+//     (err, results) => {
+//         if(err) console.log("Error reading departments");
+//         console.table(results);
 // });
 
 
