@@ -30,6 +30,7 @@ db.query(`SELECT r.id, r.title, d.name as department, r.salary
 });
 
 
+
 /*
     Queries remaining to execute:
         View All Roles
