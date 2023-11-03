@@ -2,15 +2,15 @@ const db = require('../config/connection.js');
 console.log("Starting Queries...");
 
 // View all Departments
-db.query(`SELECT * FROM departments`, function (err, results) {
-    console.log("View All Departments");
+db.query(`SELECT * FROM departments`, (err, results) => {
+    if(err) console.log("Error reading departments");
     console.table(results);
 });
 
 
 // View All Roles (w/o department)
-db.query(`SELECT * FROM roles`, function (err, results) {
-    console.log("View All Roles (w/o department)");
+db.query(`SELECT * FROM roles`, (err, results) => {
+    if(err) console.log("Error reading roles");
     console.table(results);
 });
 
