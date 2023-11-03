@@ -1,21 +1,18 @@
 const db = require('../config/connection.js');
-
-db;
-
 console.log("Starting Queries...");
 
-// // View all Departments
-// db.query(`SELECT * FROM departments`, function (err, results) {
-//     console.log("View All Departments");
-//     console.table(results);
-// });
+// View all Departments
+db.query(`SELECT * FROM departments`, function (err, results) {
+    console.log("View All Departments");
+    console.table(results);
+});
 
 
-// // View All Roles (w/o department)
-// db.query(`SELECT * FROM roles`, function (err, results) {
-//     console.log("View All Roles (w/o department)");
-//     console.table(results);
-// });
+// View All Roles (w/o department)
+db.query(`SELECT * FROM roles`, function (err, results) {
+    console.log("View All Roles (w/o department)");
+    console.table(results);
+});
 
 
 // // View All Employees (w/o role and manager)
