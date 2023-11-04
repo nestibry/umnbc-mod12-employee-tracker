@@ -1,9 +1,7 @@
 const inquirer = require('inquirer');
-const { getDepartments, viewAllDepartments, addDepartment } = require('./lib/Departments.js');
+const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
 const viewAllRoles = require('./lib/viewAllRoles.js');
 const viewAllEmployees = require('./lib/viewAllEmployees.js');
-const addNewDepartment = require('./lib/addNewDepartment.js');
-
 
 
 const employeeManagerStr = `
@@ -66,7 +64,6 @@ async function managerRouter(action) {
             return;
 
         case 'View all Departments':
-            // var response = await getDepartments();
             var response = await viewAllDepartments();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
@@ -103,8 +100,7 @@ async function managerRouter(action) {
         default:
             console.log('Error: Menu Action functionality does not exist. Please report error to your software development team.');
     }
-
-    // managerMenu();
+    // Return to Employee Manager Menu
     setTimeout(() => {
         managerMenu();
     }, 1000);
