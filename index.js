@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
-const viewAllRoles = require('./lib/viewAllRoles.js');
+const { viewAllRoles } = require('./lib/Roles.js');
 const viewAllEmployees = require('./lib/viewAllEmployees.js');
 
 
