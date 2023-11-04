@@ -70,8 +70,8 @@ async function managerRouter(action) {
             break;
 
         case 'View All Roles':
-            viewAllRoles();
-            // managerMenu();
+            var response = await viewAllRoles();
+            (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
         case 'View All Employees':
