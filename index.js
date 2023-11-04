@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const getDepartments = require('./lib/get.departments.js');
 
 
 const employeeManagerStr = `
@@ -47,20 +48,26 @@ const questions = [
     },
 ];
 
+let isManagerActive = true;
 async function main() {
-    while (true) {
+    while (isManagerActive) {
         console.log('Main Menu');
         const answers = await inquirer.prompt(questions);
 
         if (answers.action === 'Exit Employee Manager') {
             console.log('Goodbye!');
+            isManagerActive = false;
             break; // Exit the loop when the user selects "Exit Employee Manager"
         }
 
         // Handle other options here based on answers.action
         switch (answers.action) {
             case 'View All Departments':
-                console.log('Viewing All Departments:');
+                setTimeout(() => {
+                    console.log('Viewing All Departments:');
+                    getDepartments();
+                    console.log("does it get here?");
+                }, 1000);
                 break;
             case 'View All Roles':
                 console.log('Viewing All Roles:');
@@ -86,3 +93,5 @@ async function main() {
 }
 
 main();
+
+console.log("Does it make it past the main() call??");
