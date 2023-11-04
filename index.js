@@ -36,12 +36,12 @@ const managerMenuItems = [
             new inquirer.Separator(),
             'Exit Employee Manager',
             new inquirer.Separator(),
-            'View All Departments',
-            'View All Employees',
-            'View All Roles',
+            'View all Departments',
+            'View all Roles',
+            'View all Employees',
             'Add a Department',
-            'Add an Employee',
             'Add a Role',
+            'Add an Employee',
             'Update an Employee Role',
             // 'Update Employee Managers',   // Bonus
             // 'View Employees by Manager',  // Bonus
@@ -64,17 +64,17 @@ async function managerRouter(action) {
             console.log('Goodbye!');
             return;
 
-        case 'View All Departments':
+        case 'View all Departments':
             var response = await getDepartments();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
-        case 'View All Roles':
+        case 'View all Roles':
             var response = await viewAllRoles();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
-        case 'View All Employees':
+        case 'View all Employees':
             break;
 
         case 'Add a Department':
