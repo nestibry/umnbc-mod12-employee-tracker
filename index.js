@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const getDepartments = require('./lib/getDepartments.js');
+const { getDepartments, viewAllDepartments } = require('./lib/Departments.js');
 const viewAllRoles = require('./lib/viewAllRoles.js');
 const viewAllEmployees = require('./lib/viewAllEmployees.js');
 const addNewDepartment = require('./lib/addNewDepartment.js');
@@ -66,7 +66,8 @@ async function managerRouter(action) {
             return;
 
         case 'View all Departments':
-            var response = await getDepartments();
+            // var response = await getDepartments();
+            var response = await viewAllDepartments();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
