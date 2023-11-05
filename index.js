@@ -1,13 +1,19 @@
 const inquirer = require('inquirer');
-const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
-const { viewAllRoles, addRole } = require('./lib/Roles.js');
+
+const { viewAllDepartments, 
+        addDepartment, 
+        deleteDepartment } = require('./lib/Departments.js');
+
+
+const { viewAllRoles, 
+        addRole } = require('./lib/Roles.js');
 
 const { viewAllEmployees, 
-    viewEmployeesByManager, 
-    viewEmployeesByDepartment, 
-    addEmployee, 
-    updateEmployeeRole,
-    updateEmployeeManager } = require('./lib/Employees.js');
+        viewEmployeesByManager, 
+        viewEmployeesByDepartment, 
+        addEmployee, 
+        updateEmployeeRole,
+        updateEmployeeManager } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -51,6 +57,7 @@ const managerMenuItems = [
             'Add an Employee',
             `Update an Employee's Role`,
             `Update an Employee's Manager`,   // Bonus
+            'Delete a Department',    // Bonus
             // 'Delete Departments, Roles, and Employees', // Bonus
             // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
         ],
@@ -137,6 +144,16 @@ async function managerRouter(action) {
                 console.log(response);
             } else{
                 var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+
+        case 'Delete a Department':
+            var response = await deleteDepartment();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllDepartments();
                 (response.status === "success") ? console.table(response.body) : console.log(response);
             }
             break;
