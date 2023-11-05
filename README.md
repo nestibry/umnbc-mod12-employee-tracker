@@ -28,7 +28,7 @@ A command-line Content Management System (CMS) to manage a company's employee da
 #### 3. Open Repo Directory in VS Code Integrated Terminal (or Git Bash)
 
 #### 4. Invoke the following command from a MySQL command-line to seed the database
-```mysql
+```
 source ./db/schema_and_seeds.sql
 ```
 
