@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 
-const { viewAllDepartments, 
+const { viewAllDepartments,
+        viewUtilizedBudgetByDepartment, 
         addDepartment, 
         deleteDepartment } = require('./lib/Departments.js');
 
@@ -54,6 +55,7 @@ const managerMenuItems = [
             'View all Employees',
             'View Employees by Manager',  // Bonus
             'View Employees by Department', //Bonus
+            'View Utilized Budget by Department',  // Bonus: i.e., the combined salaries of all employees in that department
             'Add a Department',
             'Add a Role',
             'Add an Employee',
@@ -62,8 +64,6 @@ const managerMenuItems = [
             'Delete a Department',    // Bonus
             'Delete a Role',    // Bonus
             'Delete an Employee Record',    // Bonus
-            // 'Delete Departments, Roles, and Employees', // Bonus
-            // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
         ],
     },
 ];
@@ -99,6 +99,11 @@ async function managerRouter(action) {
 
         case 'View Employees by Department':
             var response = await viewEmployeesByDepartment();
+            (response.status === "success") ? console.table(response.body) : console.log(response);
+            break;
+
+        case 'View Utilized Budget by Department':
+            var response = await viewUtilizedBudgetByDepartment();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
