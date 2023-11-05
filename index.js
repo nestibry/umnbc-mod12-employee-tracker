@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
 const { viewAllRoles, addRole } = require('./lib/Roles.js');
-const { viewAllEmployees, addEmployee, updateEmployeeRole } = require('./lib/Employees.js');
+const { viewAllEmployees, addEmployee, updateEmployeeRole,updateEmployeeManager } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -41,8 +41,8 @@ const managerMenuItems = [
             'Add a Department',
             'Add a Role',
             'Add an Employee',
-            'Update an Employee Role',
-            // 'Update Employee Managers',   // Bonus
+            `Update an Employee's Role`,
+            `Update an Employee's Manager`,   // Bonus
             // 'View Employees by Manager',  // Bonus
             // 'View Employees by Department', //Bonus
             // 'Delete Departments, Roles, and Employees', // Bonus
@@ -105,8 +105,18 @@ async function managerRouter(action) {
             }
             break;
 
-        case 'Update an Employee Role':
+        case `Update an Employee's Role`:
             var response = await updateEmployeeRole();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+        
+        case `Update an Employee's Manager`:
+            var response = await updateEmployeeManager();
             if(response.status === "error") {
                 console.log(response);
             } else{
