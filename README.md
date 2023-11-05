@@ -1,4 +1,4 @@
-# SQL: Employee Tracker
+# MySQL: Employee Manager
 *University of Minnesota - Coding Boot Camp - Module 12 SQL Challenge*
 
 ![](https://img.shields.io/badge/License-MIT_License-blue)
