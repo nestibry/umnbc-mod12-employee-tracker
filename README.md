@@ -10,8 +10,7 @@ A command-line Content Management System (CMS) to manage a company's employee da
 ## Table of Contents
 - [Usage](#usage)
 - [Installation](#installation)
-- [Contributing](#contributing)
-- [Questions](#questions)
+- [Credits](#credits)
 - [License](#license)
 
 ## Usage
