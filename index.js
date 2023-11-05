@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
 const { viewAllRoles, addRole } = require('./lib/Roles.js');
-const { viewAllEmployees, addEmployee } = require('./lib/Employees.js');
+const { viewAllEmployees, addEmployee, updateEmployeeRole } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -106,6 +106,13 @@ async function managerRouter(action) {
             break;
 
         case 'Update an Employee Role':
+            var response = await updateEmployeeRole();
+            if(response.status !== "success") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
             break;
 
         default:
