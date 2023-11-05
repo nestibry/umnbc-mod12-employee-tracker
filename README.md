@@ -49,5 +49,5 @@ node index.js
 
 ## License
 
-- The content of this application is licensed under the [MIT License](https://choosealicense.com/licenses/mit/){:target="_blank"}
+- The content of this application is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
 
