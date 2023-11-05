@@ -16,9 +16,9 @@ A command-line Content Management System (CMS) to manage a company's employee da
 
 ## Usage
 
-#### Mock-up
+#### Demo Video
 
-[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./_challenge_info/Assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
+[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./_challenge_info/Assets/demo-video-thumbnail.png)](https://drive.google.com/file/d/1l8VGn7Q8Y3X4o7D860xcbB1J2X6VCfRI/view)
 
 ## Installation 
 #### Invoking the application locally
