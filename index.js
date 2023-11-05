@@ -14,7 +14,8 @@ const { viewAllEmployees,
         viewEmployeesByDepartment, 
         addEmployee, 
         updateEmployeeRole,
-        updateEmployeeManager } = require('./lib/Employees.js');
+        updateEmployeeManager,
+        deleteEmployee } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -60,6 +61,7 @@ const managerMenuItems = [
             `Update an Employee's Manager`,   // Bonus
             'Delete a Department',    // Bonus
             'Delete a Role',    // Bonus
+            'Delete an Employee Record',    // Bonus
             // 'Delete Departments, Roles, and Employees', // Bonus
             // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
         ],
@@ -166,6 +168,16 @@ async function managerRouter(action) {
                 console.log(response);
             } else{
                 var response = await viewAllRoles();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+        
+        case 'Delete an Employee Record':
+            var response = await deleteEmployee();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
                 (response.status === "success") ? console.table(response.body) : console.log(response);
             }
             break;
