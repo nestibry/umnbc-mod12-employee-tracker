@@ -77,7 +77,7 @@ async function managerRouter(action) {
 
         case 'Add a Department':
             var response = await addDepartment();
-            if(response.status !== "success") {
+            if(response.status === "error") {
                 console.log(response);
             } else{
                 var response = await viewAllDepartments();
@@ -87,7 +87,7 @@ async function managerRouter(action) {
 
         case 'Add a Role':
             var response = await addRole();
-            if(response.status !== "success") {
+            if(response.status === "error") {
                 console.log(response);
             } else{
                 var response = await viewAllRoles();
@@ -97,7 +97,7 @@ async function managerRouter(action) {
 
         case 'Add an Employee':
             var response = await addEmployee();
-            if(response.status !== "success") {
+            if(response.status === "error") {
                 console.log(response);
             } else{
                 var response = await viewAllEmployees();
@@ -107,7 +107,7 @@ async function managerRouter(action) {
 
         case 'Update an Employee Role':
             var response = await updateEmployeeRole();
-            if(response.status !== "success") {
+            if(response.status === "error") {
                 console.log(response);
             } else{
                 var response = await viewAllEmployees();
