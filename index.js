@@ -100,6 +100,8 @@ async function managerRouter(action) {
             break;
 
         case 'Add an Employee':
+            var response = await addEmployee();
+            (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
         case 'Update an Employee Role':
