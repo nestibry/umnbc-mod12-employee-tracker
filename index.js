@@ -1,8 +1,7 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
 const { viewAllRoles, addRole } = require('./lib/Roles.js');
-// const viewAllEmployees = require('./lib/viewAllEmployees.js');
-const { getEmployees, viewAllEmployees, addEmployee } = require('./lib/Employees.js');
+const { viewAllEmployees, addEmployee } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -48,9 +47,6 @@ const managerMenuItems = [
             // 'View Employees by Department', //Bonus
             // 'Delete Departments, Roles, and Employees', // Bonus
             // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
-            // new inquirer.Separator(),
-            // 'Exit Employee Manager',
-            // new inquirer.Separator(),
         ],
     },
 ];
@@ -101,7 +97,12 @@ async function managerRouter(action) {
 
         case 'Add an Employee':
             var response = await addEmployee();
-            (response.status === "success") ? console.table(response.body) : console.log(response);
+            if(response.status !== "success") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
             break;
 
         case 'Update an Employee Role':
