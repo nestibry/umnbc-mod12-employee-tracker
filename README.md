@@ -27,17 +27,20 @@ A command-line Content Management System (CMS) to manage a company's employee da
 
 #### 3. Open Repo Directory in VS Code Integrated Terminal (or Git Bash)
 
-#### 4. Invoke the following command from a MySQL command-line to seed the database
+#### 4. Create a `.env` file using the `.env.EXAMPLE`. Make sure to enter correct MySQL `DB_USERNAME` and `DB_PASSWORD`
+
+
+#### 5. Invoke the following command from a MySQL command-line to seed the database
 ```
 source ./db/schema_and_seeds.sql
 ```
 
-#### 5. Invoke the following command from a Bash command-line to install dependencies
+#### 6. Invoke the following command from a Bash command-line to install dependencies
 ```bash
 npm install
 ```
 
-#### 6. Invoke the following command from a Bash command-line to launch the application
+#### 7. Invoke the following command from a Bash command-line to launch the application
 ```bash
 node index.js
 ```
