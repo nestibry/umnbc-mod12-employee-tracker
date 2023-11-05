@@ -1,13 +1,22 @@
 const inquirer = require('inquirer');
-const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
-const { viewAllRoles, addRole } = require('./lib/Roles.js');
+
+const { viewAllDepartments,
+        viewUtilizedBudgetByDepartment, 
+        addDepartment, 
+        deleteDepartment } = require('./lib/Departments.js');
+
+
+const { viewAllRoles, 
+        addRole,
+        deleteRole } = require('./lib/Roles.js');
 
 const { viewAllEmployees, 
-    viewEmployeesByManager, 
-    viewEmployeesByDepartment, 
-    addEmployee, 
-    updateEmployeeRole,
-    updateEmployeeManager } = require('./lib/Employees.js');
+        viewEmployeesByManager, 
+        viewEmployeesByDepartment, 
+        addEmployee, 
+        updateEmployeeRole,
+        updateEmployeeManager,
+        deleteEmployee } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -44,15 +53,17 @@ const managerMenuItems = [
             'View all Departments',
             'View all Roles',
             'View all Employees',
-            'View Employees by Manager',  // Bonus
-            'View Employees by Department', //Bonus
+            'View Employees by Manager',  
+            'View Employees by Department', 
+            'View Utilized Budget by Department',  // i.e., the combined salaries of all employees in that department
             'Add a Department',
             'Add a Role',
             'Add an Employee',
             `Update an Employee's Role`,
-            `Update an Employee's Manager`,   // Bonus
-            // 'Delete Departments, Roles, and Employees', // Bonus
-            // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
+            `Update an Employee's Manager`,   
+            'Delete a Department',    
+            'Delete a Role',    
+            'Delete an Employee Record',    
         ],
     },
 ];
@@ -88,6 +99,11 @@ async function managerRouter(action) {
 
         case 'View Employees by Department':
             var response = await viewEmployeesByDepartment();
+            (response.status === "success") ? console.table(response.body) : console.log(response);
+            break;
+
+        case 'View Utilized Budget by Department':
+            var response = await viewUtilizedBudgetByDepartment();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
 
@@ -133,6 +149,36 @@ async function managerRouter(action) {
         
         case `Update an Employee's Manager`:
             var response = await updateEmployeeManager();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+
+        case 'Delete a Department':
+            var response = await deleteDepartment();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllDepartments();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+
+        case 'Delete a Role':
+            var response = await deleteRole();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllRoles();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+        
+        case 'Delete an Employee Record':
+            var response = await deleteEmployee();
             if(response.status === "error") {
                 console.log(response);
             } else{
