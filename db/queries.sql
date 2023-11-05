@@ -69,3 +69,9 @@ DELETE FROM roles WHERE id = 1;
 -- Delete Employee
 DELETE FROM employees WHERE id = 1;
 
+-- View Utilized Budget of a Department  
+-- Bonus: i.e., the combined salaries of all employees in that department
+SELECT d.name, SUM(r.salary) AS utilized_budget FROM roles r 
+INNER JOIN departments d ON r.department_id = d.id
+GROUP BY r.department_id;
+
