@@ -59,3 +59,13 @@ INNER JOIN departments d ON r.department_id = d.id
 LEFT JOIN employees m ON e.manager_id = m.id
 WHERE r.department_id = 1;
 
+
+-- Delete Department
+DELETE FROM departments WHERE id = 1;
+
+-- Delete Role
+DELETE FROM roles WHERE id = 1;
+
+-- Delete Employee
+DELETE FROM employees WHERE id = 1;
+
