@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
 const { viewAllRoles, addRole } = require('./lib/Roles.js');
-const viewAllEmployees = require('./lib/viewAllEmployees.js');
+// const viewAllEmployees = require('./lib/viewAllEmployees.js');
+const { getEmployees, viewAllEmployees, addEmployee } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
