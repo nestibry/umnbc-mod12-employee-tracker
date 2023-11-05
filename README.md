@@ -10,54 +10,38 @@ A command-line Content Management System (CMS) to manage a company's employee da
 ## Table of Contents
 - [Usage](#usage)
 - [Installation](#installation)
-- [Contributing](#contributing)
-- [Questions](#questions)
+- [Credits](#credits)
 - [License](#license)
 
 ## Usage
 
-#### Mock-up
+#### Demo Video
 
-[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./_challenge_info/Assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
+[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./_challenge_info/Assets/demo-video-thumbnail.png)](https://drive.google.com/file/d/1l8VGn7Q8Y3X4o7D860xcbB1J2X6VCfRI/view)
 
 ## Installation 
-#### Invoking the application locally
 
-1. Install Node.js locally
-2. Clone or Fork the Repo
-3. Open Repo Directory in VS Code Integrated Terminal (or Git Bash)
-4. Execute `npm install` to install dependencies and `npm i -D nodemon` or `npm i -g nodemon`
-4. Execute `nodemon server.js` in a bash command-line
-5. Open `http://localhost/3001`
+#### 1. Install [Node.js](https://nodejs.org/) and [MySQL](https://www.mysql.com/) locally
 
+#### 2. Clone or Fork the Repo
 
-#### Execute the following in a bash command-line to install dependencies and invoke the application:
-```
-npm install 
-npm i -D nodemon
-nodemon server.js
+#### 3. Open Repo Directory in VS Code Integrated Terminal (or Git Bash)
+
+#### 4. Invoke the following command from a MySQL command-line to seed the database
+```mysql
+source ./db/schema_and_seeds.sql
 ```
 
-#### Main Files: 
+#### 5. Invoke the following command from a Bash command-line to install dependencies
+```bash
+npm install
+```
 
-- server.js
-- public/assets/js/index.js
-- db/db.json
-- package.json
-- README.md
-- public/
-    - index.html
-    - notes.html
+#### 6. Invoke the following command from a Bash command-line to launch the application
+```bash
+node index.js
+```
 
-
-## Contributing
-- Please send an email to the code owner before contributing; see the questions section for contact information. 
-- Please follow the [Contributor Covenant](https://www.contributor-covenant.org/) when contributing.
-
-## Questions
-
-- GitHub Profile: [nestibry](https://github.com/nestibry)
-- Please email me at [nestibry@gmail.com](mailto:nestibry@gmail.com) with any questions
 
 ## Credits
 - © 2023 edX Boot Camps LLC.
