@@ -50,15 +50,6 @@ nodemon server.js
     - notes.html
 
 
-## Contributing
-- Please send an email to the code owner before contributing; see the questions section for contact information. 
-- Please follow the [Contributor Covenant](https://www.contributor-covenant.org/) when contributing.
-
-## Questions
-
-- GitHub Profile: [nestibry](https://github.com/nestibry)
-- Please email me at [nestibry@gmail.com](mailto:nestibry@gmail.com) with any questions
-
 ## Credits
 - © 2023 edX Boot Camps LLC.
 - [ASCII Art Generator - patorjk.com](https://patorjk.com/software/taag/#p=display&f=ANSI%20Regular&t=Employee%0AManager)
