@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
-const viewAllRoles = require('./lib/viewAllRoles.js');
+const { viewAllRoles, addRole } = require('./lib/Roles.js');
 const viewAllEmployees = require('./lib/viewAllEmployees.js');
 
 
@@ -89,6 +89,13 @@ async function managerRouter(action) {
             break;
 
         case 'Add a Role':
+            var response = await addRole();
+            if(response.status !== "success") {
+                console.log(response);
+            } else{
+                var response = await viewAllRoles();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
             break;
 
         case 'Add an Employee':
