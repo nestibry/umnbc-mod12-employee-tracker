@@ -53,17 +53,17 @@ const managerMenuItems = [
             'View all Departments',
             'View all Roles',
             'View all Employees',
-            'View Employees by Manager',  // Bonus
-            'View Employees by Department', //Bonus
-            'View Utilized Budget by Department',  // Bonus: i.e., the combined salaries of all employees in that department
+            'View Employees by Manager',  
+            'View Employees by Department', 
+            'View Utilized Budget by Department',  // i.e., the combined salaries of all employees in that department
             'Add a Department',
             'Add a Role',
             'Add an Employee',
             `Update an Employee's Role`,
-            `Update an Employee's Manager`,   // Bonus
-            'Delete a Department',    // Bonus
-            'Delete a Role',    // Bonus
-            'Delete an Employee Record',    // Bonus
+            `Update an Employee's Manager`,   
+            'Delete a Department',    
+            'Delete a Role',    
+            'Delete an Employee Record',    
         ],
     },
 ];
