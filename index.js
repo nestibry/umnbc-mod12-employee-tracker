@@ -1,7 +1,13 @@
 const inquirer = require('inquirer');
 const { viewAllDepartments, addDepartment } = require('./lib/Departments.js');
 const { viewAllRoles, addRole } = require('./lib/Roles.js');
-const viewAllEmployees = require('./lib/viewAllEmployees.js');
+
+const { viewAllEmployees, 
+    viewEmployeesByManager, 
+    viewEmployeesByDepartment, 
+    addEmployee, 
+    updateEmployeeRole,
+    updateEmployeeManager } = require('./lib/Employees.js');
 
 
 const employeeManagerStr = `
@@ -38,18 +44,15 @@ const managerMenuItems = [
             'View all Departments',
             'View all Roles',
             'View all Employees',
+            'View Employees by Manager',  // Bonus
+            'View Employees by Department', //Bonus
             'Add a Department',
             'Add a Role',
             'Add an Employee',
-            'Update an Employee Role',
-            // 'Update Employee Managers',   // Bonus
-            // 'View Employees by Manager',  // Bonus
-            // 'View Employees by Department', //Bonus
+            `Update an Employee's Role`,
+            `Update an Employee's Manager`,   // Bonus
             // 'Delete Departments, Roles, and Employees', // Bonus
             // 'View Utilized Budget of a Department',  // Bonus: i.e., the combined salaries of all employees in that department
-            // new inquirer.Separator(),
-            // 'Exit Employee Manager',
-            // new inquirer.Separator(),
         ],
     },
 ];
@@ -77,10 +80,20 @@ async function managerRouter(action) {
             var response = await viewAllEmployees();
             (response.status === "success") ? console.table(response.body) : console.log(response);
             break;
+        
+        case 'View Employees by Manager':
+            var response = await viewEmployeesByManager();
+            (response.status === "success") ? console.table(response.body) : console.log(response);
+            break;
+
+        case 'View Employees by Department':
+            var response = await viewEmployeesByDepartment();
+            (response.status === "success") ? console.table(response.body) : console.log(response);
+            break;
 
         case 'Add a Department':
             var response = await addDepartment();
-            if(response.status !== "success") {
+            if(response.status === "error") {
                 console.log(response);
             } else{
                 var response = await viewAllDepartments();
@@ -90,7 +103,7 @@ async function managerRouter(action) {
 
         case 'Add a Role':
             var response = await addRole();
-            if(response.status !== "success") {
+            if(response.status === "error") {
                 console.log(response);
             } else{
                 var response = await viewAllRoles();
@@ -99,9 +112,33 @@ async function managerRouter(action) {
             break;
 
         case 'Add an Employee':
+            var response = await addEmployee();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
             break;
 
-        case 'Update an Employee Role':
+        case `Update an Employee's Role`:
+            var response = await updateEmployeeRole();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
+            break;
+        
+        case `Update an Employee's Manager`:
+            var response = await updateEmployeeManager();
+            if(response.status === "error") {
+                console.log(response);
+            } else{
+                var response = await viewAllEmployees();
+                (response.status === "success") ? console.table(response.body) : console.log(response);
+            }
             break;
 
         default:
