@@ -17,8 +17,7 @@ A command-line Content Management System (CMS) to manage a company's employee da
 
 #### Demo Video
 
-[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./_challenge_info/Assets/demo-video-thumbnail.png)](https://drive.google.com/file/d/1l8VGn7Q8Y3X4o7D860xcbB1J2X6VCfRI/view)
-
+[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./_challenge_info/Assets/demo-video-thumbnail.png)](https://youtu.be/R1OZm1962JI)
 ## Installation 
 
 1. Install [Node.js](https://nodejs.org/) and [MySQL](https://www.mysql.com/) locally
